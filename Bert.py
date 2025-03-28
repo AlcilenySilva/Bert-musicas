@@ -26,7 +26,7 @@ test_df = test_df.copy()
 train_df["explicit"] = train_df["explicit"].fillna(0).astype(int)
 test_df["explicit"] = test_df["explicit"].fillna(0).astype(int)
 
-# Definir o tokenizer
+# Definir o tokenizador
 MODEL_NAME = "neuralmind/bert-base-portuguese-cased"
 tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
 
@@ -88,6 +88,7 @@ trainer.train()
 
 # Avaliar no conjunto de teste
 metrics = trainer.evaluate()
+#resultados
 print(metrics)
 print("\n===== Resultados de Avaliação =====")
 print(f"Epoch: {metrics['epoch']:.1f}")
